@@ -285,10 +285,6 @@
 }
 
 .wrapperNormal {
-  max-width: 560px;
-}
-
-.wrapperLarge {
   max-width: 810px;
 }
 

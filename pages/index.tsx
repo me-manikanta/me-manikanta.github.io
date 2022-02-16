@@ -36,6 +36,8 @@ const About = () => {
         <span className={styles.skills}>Software Engineer</span>
         &nbsp;|&nbsp;
         <span className={styles.skills}>Tech Enthusiast</span>
+        &nbsp;|&nbsp;
+        <span className={styles.skills}>Coffee Lover</span>
       </h2>
     </>
   );
