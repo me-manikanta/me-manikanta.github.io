@@ -1,11 +1,17 @@
 import type { NextPage } from "next";
-import LinkedInIcon from "../public/assets/linkedin.svg";
-import GitHubIcon from "../public/assets/github.svg";
-import MailIcon from "../public/assets/mail.svg";
-import ResumeIcon from "../public/assets/resume.svg";
-import HeartIcon from "../public/assets/heart.svg";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import MailIcon from "@mui/icons-material/Email";
+import ResumeIcon from "@mui/icons-material/DocumentScanner";
+import HeartIcon from "@mui/icons-material/Favorite";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import MoonIcon from "@mui/icons-material/DarkMode";
+import SunIcon from "@mui/icons-material/LightMode";
+import TwitterIcon from "@mui/icons-material/Twitter";
 
 import styles from "../styles/Home.module.css";
+import { useTheme } from "next-themes";
+import { SocialLink } from "../components/SocialLink";
 
 const Home: NextPage = () => {
   return (
@@ -19,6 +25,22 @@ const Home: NextPage = () => {
       </div>
     </div>
   );
+};
+
+const Header = () => {
+  const { systemTheme, theme, setTheme } = useTheme();
+
+  const renderThemeChanger = () => {
+    const currentTheme = theme === "system" ? systemTheme : theme;
+
+    if (currentTheme === "dark") {
+      return <SunIcon role="button" onClick={() => console.log("Clicked")} />;
+    } else {
+      return <MoonIcon role="button" onClick={() => setTheme("dark")} />;
+    }
+  };
+
+  return <>{renderThemeChanger()}</>;
 };
 
 const About = () => {
@@ -46,33 +68,31 @@ const About = () => {
 const Social = () => {
   return (
     <div className={styles.connectLinks}>
-      <a
-        className={styles.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        data-title="LinkedIn"
-        href="https://www.linkedin.com/in/manikantainugurthi/"
-      >
-        <LinkedInIcon className={styles.icon} />
-      </a>
-      <a
-        className={styles.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        data-title="GitHub"
-        href="https://github.com/me-manikanta"
-      >
-        <GitHubIcon className={styles.icon} />
-      </a>
-      <a
-        className={styles.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        data-title="E-mail"
-        href="mailto:mani.inugurthi@gmail.com"
-      >
-        <MailIcon className={styles.icon} viewBox="0 0 512 512" />
-      </a>
+      <SocialLink
+        title="GitHub"
+        link="https://github.com/me-manikanta"
+        Icon={GitHubIcon}
+      />
+      <SocialLink
+        title="LinkedIn"
+        link="https://www.linkedin.com/in/manikantainugurthi/"
+        Icon={LinkedInIcon}
+      />
+      <SocialLink
+        title="Instagram"
+        link="https://www.instagram.com/_me_manikanta/"
+        Icon={InstagramIcon}
+      />
+      <SocialLink
+        title="Twitter"
+        link="https://twitter.com/me_manikanta"
+        Icon={TwitterIcon}
+      />
+      <SocialLink
+        title="E-mail"
+        link="mailto:mani.inugurthi@gmail.com"
+        Icon={MailIcon}
+      />
       <a
         className={styles.link}
         target="_blank"
@@ -80,7 +100,7 @@ const Social = () => {
         data-title="Resume"
         href="/assets/resume.pdf"
       >
-        <ResumeIcon className={styles.icon} viewBox="0 0 512 512" />
+        <ResumeIcon className={styles.icon} />
       </a>
     </div>
   );
