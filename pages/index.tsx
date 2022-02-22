@@ -11,7 +11,6 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import styles from "../styles/Home.module.css";
 import { useTheme } from "next-themes";
 import { SocialLink } from "../components/SocialLink";
-import { Footer } from "../components/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -20,7 +19,6 @@ const Home: NextPage = () => {
         <About />
         <Social />
       </header>
-      <Footer />
     </>
   );
 };

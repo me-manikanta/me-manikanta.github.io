@@ -1,6 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import { Footer } from "../components/Footer";
 import { Timeline, Event } from "../components/Timeline";
 import { data } from "../data/TimelineEvents";
 import HeaderStyles from "../styles/Header.module.css";
@@ -14,7 +12,6 @@ const About: NextPage = () => {
           <Event key={index} {...datum} />
         ))}
       </Timeline>
-      <Footer />
     </>
   );
 };
