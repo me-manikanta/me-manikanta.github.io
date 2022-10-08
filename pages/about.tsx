@@ -1,44 +1,61 @@
-import type { NextPage } from "next";
-import { Timeline, Event } from "../components/Timeline";
-import { data } from "../data/TimelineEvents";
-import HeaderStyles from "../styles/Header.module.css";
+import Link from "next/link";
 
-const About: NextPage = () => {
+import { ExternalLink } from "../components/ExternalLink";
+
+export default function About() {
   return (
-    <>
-      <Details />
-      <Timeline>
-        {data.map((datum, index) => (
-          <Event key={index} {...datum} />
-        ))}
-      </Timeline>
-    </>
+    <div>
+      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
+        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+          About Me
+        </h1>
+        <div className="mb-8 prose dark:prose-dark leading-6">
+          <h2>Links</h2>
+          <ul>
+            <li>
+              Twitter:{" "}
+              <ExternalLink href="https://twitter.com/me_manikanta">
+                @me_manikanta
+              </ExternalLink>
+            </li>
+            <li>
+              GitHub:{" "}
+              <ExternalLink href="https://github.com/me-manikanta">
+                @me-manikanta
+              </ExternalLink>
+            </li>
+            <li>
+              Website:{" "}
+              <ExternalLink href="https://me-manikanta.github.io">
+                https://me-manikanta.github.io
+              </ExternalLink>
+            </li>
+            <li>
+              LinkedIn:{" "}
+              <ExternalLink href="https://www.linkedin.com/in/manikantainugurthi/">
+                https://www.linkedin.com/in/manikantainugurthi
+              </ExternalLink>
+            </li>
+          </ul>
+          <h2>Bio</h2>
+          <h3>Job Title</h3>
+          <p>
+            Manikanta Inugurthi, Software Engineer II at{" "}
+            <Link href="https://www.microsoft.com/">Microsoft</Link>.
+          </p>
+          <h3>Education</h3>
+          <p>
+            Graduated from Birla Institute of Technology, Mesra with a B.E. in
+            Information Technology.
+          </p>
+          <h3>Short Description</h3>
+          <p>
+            Hey I am Mani. I work as a Software Engineer at{" "}
+            <Link href="https://www.microsoft.com/">Microsoft</Link>, where I
+            and my team help in building translation models.
+          </p>
+        </div>
+      </div>
+    </div>
   );
-};
-
-const Details = () => {
-  return (
-    <>
-      <h1 className={HeaderStyles.title}>About Me</h1>
-      <p>
-        Hi! My name is Mani and I&apos;m a Full Stack Developer. I live in
-        Hyderabad, India
-        <span role="img" aria-label="Philippines">
-          {" "}
-          🇮🇳
-        </span>
-        .
-      </p>
-      <p>
-        My passion is to build softwares to solve practical problems along side
-        understanding the human side of software development. In the words of{" "}
-        <a href="https://blog.codinghorror.com/about-me">Jeff Atwood</a>{" "}
-        "Computers are fascinating machines, but they're mostly a reflection of
-        the people using them... you have to study the people <em>behind </em>
-        the software, too."
-      </p>
-    </>
-  );
-};
-
-export default About;
+}
