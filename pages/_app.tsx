@@ -8,8 +8,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
       <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <main
+        id="skip"
+        className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900"
+      >
+        <Component {...pageProps} />
+        <Footer />
+      </main>
     </ThemeProvider>
   );
 }
