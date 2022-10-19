@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const Page: NextPage = () => {
+const NotFoundPage: NextPage = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
@@ -72,4 +72,4 @@ const fetchJoke = async () => {
   }
 };
 
-export default Page;
+export default NotFoundPage;
