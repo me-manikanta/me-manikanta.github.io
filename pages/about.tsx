@@ -50,7 +50,7 @@ export default function About() {
           </p>
           <h3>Short Description</h3>
           <p>
-            Hey I am Mani. I work as a Software Engineer at{" "}
+            Hey I am Mani. I work as an ML Ops Engineer at{" "}
             <Link href="https://www.microsoft.com/">Microsoft</Link>, where I
             and my team help in building translation models.
           </p>
