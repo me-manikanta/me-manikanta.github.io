@@ -9,7 +9,7 @@ import { useEffect } from "react";
 
 const NavItem = ({ href, text }: any) => {
   const router = useRouter();
-  const isActive = router.asPath === href;
+  const isActive = router.asPath === href; //TODO: update this condition
 
   return (
     <NextLink href={href}>
@@ -51,6 +51,7 @@ export const Header = () => {
         <div className="ml-[-0.60rem]">
           <NavItem href="/" text="Home" />
           <NavItem href="/about" text="About" />
+          <NavItem href="/blog" text="Blog" />
         </div>
         <button
           aria-label="Toggle Dark Mode"
