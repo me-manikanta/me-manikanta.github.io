@@ -6,6 +6,8 @@ import MoonIcon from "@mui/icons-material/DarkMode";
 import SunIcon from "@mui/icons-material/LightMode";
 import { useState } from "react";
 import { useEffect } from "react";
+import MobileMenu from "./MobileMenu";
+import { MenuItems } from "../data/MenuData";
 
 const NavItem = ({ href, text }: any) => {
   const router = useRouter();
@@ -49,8 +51,10 @@ export const Header = () => {
     <div className="flex flex-col justify-center px-8">
       <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900 bg-gray-50  dark:bg-gray-900 bg-opacity-60 dark:text-gray-100">
         <div className="ml-[-0.60rem]">
-          <NavItem href="/" text="Home" />
-          <NavItem href="/about" text="About" />
+          <MobileMenu />
+          {MenuItems.map((menuItem) => (
+            <NavItem href={menuItem.href} text={menuItem.title} />
+          ))}
         </div>
         <button
           aria-label="Toggle Dark Mode"
