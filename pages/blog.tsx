@@ -3,11 +3,10 @@ import matter from "gray-matter";
 import Link from "next/link";
 import path from "path";
 
-const Blogs = (props) => {
-  const { blogPosts } = props;
+export default function Blog({ blogPosts }: any) {
   return (
     <div>
-      {blogPosts.map((blogPost, index) => {
+      {blogPosts.map((blogPost: any, index: number) => {
         const { frontMatter, slug } = blogPost;
         return (
           <Link href={`blog/${slug}`} key={index}>
@@ -17,9 +16,7 @@ const Blogs = (props) => {
       })}
     </div>
   );
-};
-
-export default Blogs;
+}
 
 export const getStaticProps = async () => {
   const files = fs.readdirSync("blogs");
