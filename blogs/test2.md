@@ -1,7 +1,7 @@
 ---
-title: Sample Blog
-date: "November 6, 2022"
-description: Testing dynamic routes in Next JS
+title: Sample Blog 2
+date: "November 16, 2022"
+description: Styling
 thumbnailUrl: "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI"
 ---
 
