@@ -9,7 +9,11 @@ const Blog = (props) => {
 
   const ast = Markdoc.parse(content);
   const mdContent = Markdoc.transform(ast /* config */);
-  return           <div className="w-full mt-4 prose dark:prose-dark max-w-none">{Markdoc.renderers.react(mdContent, React)}</div>;
+  return (
+    <div className="w-full mt-4 prose dark:prose-dark mx-auto">
+      {Markdoc.renderers.react(mdContent, React)}
+    </div>
+  );
 };
 
 export default Blog;
