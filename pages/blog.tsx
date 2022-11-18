@@ -13,7 +13,7 @@ export default function Blog({ blogPosts }: any) {
           <Link href={`blog/${slug}`} key={index}>
             <div
               className={
-                "flex justify-between items-center px-12 w-full max-w-2xl mb-8 cursor-pointer"
+                "flex justify-between items-center md:px-12 w-full max-w-2xl mb-8 cursor-pointer"
               }
             >
               <div>
@@ -33,7 +33,7 @@ export default function Blog({ blogPosts }: any) {
                 <img
                   src={frontMatter.thumbnailUrl}
                   alt={"blog-pic"}
-                  className={"h-40 w-40 rounded-2xl"}
+                  className={"h-24 w-24 md:h-40 md:w-40 rounded-2xl"}
                 />
               )}
             </div>
