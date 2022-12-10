@@ -3,12 +3,25 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Markdoc from "@markdoc/markdoc";
+import { default as fence } from "../../components/markdoc/fence.markdoc";
+import { Code } from "../../components/Code";
 
 const Snippet = (props: any) => {
   const { frontMatter, content } = props;
 
+  const config = {
+    nodes: {
+      fence,
+    },
+    tags: {},
+  };
+
+  const Components = {
+    Code,
+  };
+
   const ast = Markdoc.parse(content);
-  const mdContent = Markdoc.transform(ast /* config */);
+  const mdContent = Markdoc.transform(ast, config);
   return (
     <div className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900">
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
@@ -32,7 +45,7 @@ const Snippet = (props: any) => {
           </div>
         </div>
         <div className="w-full mt-4 prose dark:prose-dark mx-auto">
-          {Markdoc.renderers.react(mdContent, React)}
+          {Markdoc.renderers.react(mdContent, React, Components)}
         </div>
       </article>
     </div>
@@ -55,6 +68,10 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
+
+export function Callout({ children }: any) {
+  return <div className="callout">Hello world</div>;
+}
 
 export const getStaticProps = async ({ params: { slug } }: any) => {
   const markdownWithMeta = fs.readFileSync(
