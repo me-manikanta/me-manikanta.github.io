@@ -4,7 +4,6 @@ description: Force push into a git repository
 logo: "https://www.logolynx.com/images/logolynx/4f/4f5f6684ab7fb6b3f7be735e31803c84.png"
 ---
 
-# ABCDEFG
 Following command will ignore the changes in remote and pushes the current changes
 Ref: [Git Force Push](https://git-scm.com/docs/git-push#Documentation/git-push.txt---force)
 ```sh

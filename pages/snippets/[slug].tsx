@@ -3,8 +3,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Markdoc from "@markdoc/markdoc";
-import { default as fence } from "../../components/markdoc/fence.markdoc";
-import { Code } from "../../components/Code";
+import { fence } from "../../components/markdoc/nodes/";
 
 const Snippet = (props: any) => {
   const { frontMatter, content } = props;
@@ -14,10 +13,6 @@ const Snippet = (props: any) => {
       fence,
     },
     tags: {},
-  };
-
-  const Components = {
-    Code,
   };
 
   const ast = Markdoc.parse(content);
@@ -45,7 +40,7 @@ const Snippet = (props: any) => {
           </div>
         </div>
         <div className="w-full mt-4 prose dark:prose-dark mx-auto">
-          {Markdoc.renderers.react(mdContent, React, Components)}
+          {Markdoc.renderers.react(mdContent, React)}
         </div>
       </article>
     </div>
