@@ -16,7 +16,11 @@ export default function Snippets({ snippets }: any) {
         </p>
         <div className="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-2">
           {snippets.map((snippet: any) => (
-            <SnippetCard {...snippet["frontMatter"]} slug={snippet.slug} />
+            <SnippetCard
+              key={snippet.slug}
+              {...snippet["frontMatter"]}
+              slug={snippet.slug}
+            />
           ))}
         </div>
       </div>
