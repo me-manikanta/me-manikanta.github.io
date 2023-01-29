@@ -30,7 +30,7 @@ module.exports = {
               },
               code: { color: theme('colors.blue.400') }
             },
-            'h2,h3,h4': {
+            'h1,h2,h3,h4,h5,h6': {
               color: theme('colors.gray.100'),
               'scroll-margin-top': spacing[32]
             },

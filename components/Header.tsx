@@ -11,7 +11,7 @@ import { MenuItems } from "../data/MenuData";
 
 const NavItem = ({ href, text }: any) => {
   const router = useRouter();
-  const isActive = router.asPath === href;
+  const isActive = router.asPath === href; //TODO: update this condition
 
   return (
     <NextLink href={href}>
