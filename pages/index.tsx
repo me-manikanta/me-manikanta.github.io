@@ -1,104 +1,36 @@
 import type { NextPage } from "next";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import MailIcon from "@mui/icons-material/Email";
-import ResumeIcon from "@mui/icons-material/DocumentScanner";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import MoonIcon from "@mui/icons-material/DarkMode";
-import SunIcon from "@mui/icons-material/LightMode";
-import TwitterIcon from "@mui/icons-material/Twitter";
-
-import styles from "../styles/Home.module.css";
-import { useTheme } from "next-themes";
-import { SocialLink } from "../components/SocialLink";
+import Image from "next/image";
+import AnimatedTitle from "../components/AnimatedTitle";
 
 const Home: NextPage = () => {
   return (
-    <>
-      <header className={`${styles.headerHome} ${styles.animated}`}>
-        <About />
-        <Social />
-      </header>
-    </>
-  );
-};
-
-const Header = () => {
-  const { systemTheme, theme, setTheme } = useTheme();
-
-  const renderThemeChanger = () => {
-    const currentTheme = theme === "system" ? systemTheme : theme;
-
-    if (currentTheme === "dark") {
-      return <SunIcon role="button" onClick={() => console.log("Clicked")} />;
-    } else {
-      return <MoonIcon role="button" onClick={() => setTheme("dark")} />;
-    }
-  };
-
-  return <>{renderThemeChanger()}</>;
-};
-
-const About = () => {
-  return (
-    <>
-      <a className={styles.link} href="https://github.com/me-manikanta">
-        <img
-          className={styles.selfie}
-          alt="Manikanta Inugurthi"
-          src={"/assets/selfie.jpeg"}
-        />
-      </a>
-      <h1 className={styles.title}>Manikanta Inugurthi</h1>
-      <h2 className={styles.description}>
-        <span className={styles.skills}>Software Engineer</span>
-        &nbsp;|&nbsp;
-        <span className={styles.skills}>Tech Enthusiast</span>
-        &nbsp;|&nbsp;
-        <span className={styles.skills}>Coffee Lover</span>
-      </h2>
-    </>
-  );
-};
-
-const Social = () => {
-  return (
-    <div className={styles.connectLinks}>
-      <SocialLink
-        title="GitHub"
-        link="https://github.com/me-manikanta"
-        Icon={GitHubIcon}
-      />
-      <SocialLink
-        title="LinkedIn"
-        link="https://www.linkedin.com/in/manikantainugurthi/"
-        Icon={LinkedInIcon}
-      />
-      <SocialLink
-        title="Instagram"
-        link="https://www.instagram.com/_me_manikanta/"
-        Icon={InstagramIcon}
-      />
-      <SocialLink
-        title="Twitter"
-        link="https://twitter.com/me_manikanta"
-        Icon={TwitterIcon}
-      />
-      <SocialLink
-        title="E-mail"
-        link="mailto:mani.inugurthi@gmail.com"
-        Icon={MailIcon}
-      />
-      <a
-        className={styles.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        data-title="Resume"
-        href="/assets/resume.pdf"
-      >
-        <ResumeIcon className={styles.icon} />
-      </a>
+    <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
+      <div className="flex flex-col-reverse sm:flex-row items-start">
+        <div className="flex flex-col pr-8">
+          <AnimatedTitle />
+          <h2 className="text-gray-700 dark:text-gray-200 mb-4">
+            Software Engineer II in Machine Translation team at{" "}
+            <span className="font-semibold">Microsoft</span>
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 mt-8 mb-16">
+            Software Engineer 🧑‍💻 | Tech Blogger 📝 | Coffee Lover{" "}
+            <span className="text-4xl">&#9749;</span>
+          </p>
+        </div>
+        <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
+          <Image
+            alt="Manikanta Inugurthi"
+            height={176}
+            width={176}
+            src="/assets/selfie.jpeg"
+            sizes="30vw"
+            priority
+            className="rounded-full filter"
+          />
+        </div>
+      </div>
     </div>
   );
 };
+
 export default Home;
