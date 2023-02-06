@@ -3,18 +3,9 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Markdoc from "@markdoc/markdoc";
-import { fence } from "../../components/markdoc/nodes/";
 
 const Snippet = (props: any) => {
   const { frontMatter, content } = props;
-
-  const config = {
-    nodes: {
-      fence,
-    },
-    tags: {},
-  };
-
   const ast = Markdoc.parse(content);
   const mdContent = Markdoc.transform(ast);
   return (
