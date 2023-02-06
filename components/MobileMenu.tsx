@@ -1,6 +1,6 @@
 import cn from "classnames";
 import Link from "next/link";
-import useDelayedRender from "use-delayed-render";
+import useDelayedRender from "../hooks/DelayedRenderer";
 import { useState, useEffect } from "react";
 import styles from "../styles/mobile-menu.module.css";
 import { MenuItems } from "../data/MenuData";
