@@ -18,7 +18,7 @@ But wait!
 
 If we browse through the `git log` of any of our repositories, there is a high chance that it looks something like this,
 
-``` text
+```text
 fixed NPE in test case
 CSS fixes
 added a button to send mail

@@ -53,7 +53,9 @@ export default function MobileMenu() {
           {MenuItems.map((menuItem) => (
             <li
               className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
-              style={{ transitionDelay: menuItem.transitionDelay }}
+              style={{
+                transitionDelay: menuItem.transitionDelay,
+              }}
             >
               <Link href={menuItem.href}>
                 <a className="flex w-auto pb-4">{menuItem.title}</a>

@@ -5,7 +5,7 @@ date: "September 28, 2022"
 
 # Introduction
 
-If you are reading this I assume you know about [splitwise](https://www.splitwise.com) application. A one-line summary in their words is *"Splitwise is a free tool for friends and roommates to track bills and other shared expenses so that everyone gets paid back"*
+If you are reading this I assume you know about [splitwise](https://www.splitwise.com) application. A one-line summary in their words is _"Splitwise is a free tool for friends and roommates to track bills and other shared expenses so that everyone gets paid back"_
 
 I use another app called [money manager](https://moneymanagerapp.com/) for personal expenses, but instead of jumping between applications I always wanted one app to track all my expenses. I was about to send feedback to Splitwise to add a feature where I can add costs only where I am involved, interestingly enough many users needed [this feature](http://feedback.splitwise.com/forums/162446-general/suggestions/4084332-track-personal-expenses) and thanks to them the Splitwise team have suggested [a way](http://feedback.splitwise.com/forums/162446-general/suggestions/4084332-track-personal-expenses) to do it.
 
@@ -17,15 +17,15 @@ Now as the storytime is done, let's list down all the requirements
 
 1. Ability to get the total expense
 
-* For a given date/date range
+- For a given date/date range
 
-* For a given friend(s)/group(s)
+- For a given friend(s)/group(s)
 
 1. Output a pie chart for a given date range
 
-* For Group-wise expenses
+- For Group-wise expenses
 
-* For Category-wise expenses
+- For Category-wise expenses
 
 1. Send an email on the first day of the month, with the following template
 
@@ -128,7 +128,7 @@ Let's first create a Github action to run our script and send out the email. Let
 jobs:
   send-mail:
     runs-on: ubuntu-latest
-    
+
     steps:
 ```
 
@@ -138,8 +138,8 @@ The first step of our job is to checkout the repository with the default branch.
 jobs:
   send-mail:
     runs-on: ubuntu-latest
-    
-    steps:    
+
+    steps:
       - name: Checkout Repos
         uses: actions/checkout@v2.4.2
 ```
@@ -152,10 +152,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
       - name: Checkout Repos
         uses: actions/checkout@v2.4.2
-    
+
       - name: Setup Python
         uses: actions/setup-python@v4.2.0
         with:
@@ -173,10 +172,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    
       - name: Checkout Repos
         uses: actions/checkout@v2.4.2
-    
+
       - name: Setup Python
         uses: actions/setup-python@v4.2.0
         with:
@@ -184,10 +182,10 @@ jobs:
           cache: pip
           architecture: x64
           update-environment: true
-          
+
       - name: Install required dependencies
         run: python -m pip install -r requirements.txt
-      
+
       - name: Run Automation
         run: python main.py
 ```
@@ -206,14 +204,14 @@ The complete yml file can be found [here](https://github.com/me-manikanta/Splitw
 
 # References
 
-* [Splitwise Documentation](https://dev.splitwise.com/)
+- [Splitwise Documentation](https://dev.splitwise.com/)
 
-* [Python SDK for Splitwise](https://splitwise.readthedocs.io/en/latest/)
+- [Python SDK for Splitwise](https://splitwise.readthedocs.io/en/latest/)
 
-* [Send mails using Gmail Account](https://geekflare.com/send-gmail-in-python/)
+- [Send mails using Gmail Account](https://geekflare.com/send-gmail-in-python/)
 
-* [Inline images when sending emails in python](https://stackoverflow.com/a/52329759)
+- [Inline images when sending emails in python](https://stackoverflow.com/a/52329759)
 
-* [Github Actions Documentation](https://docs.github.com/en/actions)
+- [Github Actions Documentation](https://docs.github.com/en/actions)
 
-* [Schedule Github Action](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onschedule)
+- [Schedule Github Action](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onschedule)

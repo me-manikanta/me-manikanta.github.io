@@ -11,13 +11,13 @@ const Blog = (props) => {
   const mdContent = Markdoc.transform(ast /* config */);
   return (
     <>
-    <div className="w-full prose dark:prose-dark mx-auto">
-      <h1 className="text-center mb-1">{frontMatter.title}</h1>
-      {/* Todo to show date and other metadta here */}
-      <hr className="mt-4" />
-      {Markdoc.renderers.react(mdContent, React)}
-    </div>
-</>
+      <div className="w-full prose dark:prose-dark mx-auto">
+        <h1 className="text-center mb-1">{frontMatter.title}</h1>
+        {/* Todo to show date and other metadta here */}
+        <hr className="mt-4" />
+        {Markdoc.renderers.react(mdContent, React)}
+      </div>
+    </>
   );
 };
 

@@ -1,25 +1,26 @@
-import { Tag } from '@markdoc/markdoc';
-import { Heading } from '../../components/Heading';
+import { Tag } from "@markdoc/markdoc";
+import { Heading } from "../../components/Heading";
 
 function generateID(children, attributes) {
-  if (attributes.id && typeof attributes.id === 'string') {
+  if (attributes.id && typeof attributes.id === "string") {
     return attributes.id;
   }
   return children
-    .filter((child) => typeof child === 'string')
-    .join(' ')
-    .replace(/[?]/g, '')
-    .replace(/\s+/g, '-')
+    .filter((child) => typeof child === "string")
+    .join(" ")
+    .replace(/[?]/g, "")
+    .replace(/\s+/g, "-")
     .toLowerCase();
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   render: Heading,
-  children: ['inline'],
+  children: ["inline"],
   attributes: {
     id: { type: String },
     level: { type: Number, required: true, default: 1 },
-    className: { type: String }
+    className: { type: String },
   },
   transform(node, config) {
     const attributes = node.transformAttributes(config);
@@ -27,5 +28,5 @@ export default {
     const id = generateID(children, attributes);
 
     return new Tag(this.render, { ...attributes, id }, children);
-  }
+  },
 };

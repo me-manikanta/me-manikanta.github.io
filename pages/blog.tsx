@@ -13,7 +13,7 @@ export default function Blog({ blogPosts }: any) {
           <Link href={`blog/${slug}`} key={index}>
             <div
               className={
-                "flex justify-between items-center md:px-12 w-full max-w-2xl mb-8 cursor-pointer someborder"
+                "flex justify-between items-center md:px-12 w-full max-w-2xl mb-8 cursor-pointer gradient-border-white"
               }
             >
               <div>

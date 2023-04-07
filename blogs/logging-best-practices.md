@@ -112,7 +112,5 @@ LOG.error("Error occurred while fetching the employee data for the company. [com
 - Code project [blog on The Art of Logging][3]
 
 [1]: https://blog.codinghorror.com/the-problem-with-logging/
-
 [2]: https://blog.codinghorror.com
-
 [3]: https://www.codeproject.com/Articles/42354/The-Art-of-Logging
