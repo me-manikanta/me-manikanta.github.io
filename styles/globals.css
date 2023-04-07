@@ -245,3 +245,30 @@ table {
 .prose table {
   @apply border border-gray-900 dark:border-gray-300;
 }
+
+.someborder {
+  /* @apply border border-gray-900 rounded-3xl dark:border-gray-300; */
+  @apply gradient-border-white dark:gradient-border-black;
+  border-width: 3px;
+  border-style: solid;
+}
+
+@layer utilities{
+.gradient-border-black{
+  border-image: 
+  linear-gradient(
+    to bottom, 
+    black, 
+    rgba(0, 0, 0, 0),
+  ) 1 100%;
+}
+}
+
+.gradient-border-white{
+   border-image: 
+  linear-gradient(
+    to bottom, 
+    rgb(122, 122, 122), 
+    rgba(0, 0, 0, 0)
+  ) 1 100%;
+}
