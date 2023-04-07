@@ -1,6 +1,6 @@
 export type SnippetMatter = {
-    title: string,
-    description: string,
-    logo: string,
-    slug: string
-}
+  title: string;
+  description: string;
+  logo: string;
+  slug: string;
+};
