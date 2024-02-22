@@ -10,34 +10,37 @@ export default function Blog({ blogPosts }: any) {
         const { frontMatter, slug } = blogPost;
         const { title, date, description } = frontMatter;
         return (
-          <Link href={`blog/${slug}`} key={index}>
-            <div
-              className={
-                "flex justify-between items-center md:px-12 w-full max-w-2xl mb-8 cursor-pointer gradient-border-white"
-              }
-            >
-              <div>
-                <h1
-                  className={
-                    "mt-8 mb-4 text-3xl font-bold tracking-tight text-black dark:text-white"
-                  }
-                >
-                  {title}
-                </h1>
-                <p className={"text-gray-600 dark:text-gray-400"}>
-                  {description}
-                </p>
-                <p className={"text-gray-500 mt-3"}>{date}</p>
+          <>
+            <Link href={`blog/${slug}`} key={index}>
+              <div
+                className={
+                  "flex justify-between items-center md:px-12 w-full max-w-2xl mb-8 cursor-pointer"
+                }
+              >
+                <div>
+                  <h1
+                    className={
+                      "mt-8 mb-4 text-xl font-bold tracking-tight text-black dark:text-white"
+                    }
+                  >
+                    {title}
+                  </h1>
+                  <p className={"text-gray-600 dark:text-gray-400"}>
+                    {description}
+                  </p>
+                  <p className={"text-gray-500 mt-3"}>{date}</p>
+                </div>
+                {frontMatter.thumbnailUrl && (
+                  <img
+                    src={frontMatter.thumbnailUrl}
+                    alt={"blog-pic"}
+                    className={"h-24 w-24 md:h-40 md:w-40 rounded-2xl"}
+                  />
+                )}
               </div>
-              {frontMatter.thumbnailUrl && (
-                <img
-                  src={frontMatter.thumbnailUrl}
-                  alt={"blog-pic"}
-                  className={"h-24 w-24 md:h-40 md:w-40 rounded-2xl"}
-                />
-              )}
-            </div>
-          </Link>
+            </Link>
+            <hr className="w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
+          </>
         );
       })}
     </div>

@@ -5,8 +5,13 @@ export const MenuItems = [
     transitionDelay: "125ms",
   },
   {
+    href: "/blog",
+    title: "Blog",
+    transitionDelay: "150ms",
+  },
+  {
     href: "/about",
     title: "About",
-    transitionDelay: "150ms",
+    transitionDelay: "175ms",
   },
 ];
