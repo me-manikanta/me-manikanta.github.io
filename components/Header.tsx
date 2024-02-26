@@ -14,17 +14,16 @@ const NavItem = ({ href, text }: any) => {
   const isActive = router.asPath === href; //TODO: update this condition
 
   return (
-    <NextLink href={href}>
-      <a
-        className={cn(
-          isActive
-            ? "font-semibold text-gray-800 dark:text-gray-200"
-            : "font-normal text-gray-600 dark:text-gray-400",
-          "hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
-        )}
-      >
-        <span>{text}</span>
-      </a>
+    <NextLink
+      href={href}
+      className={cn(
+        isActive
+          ? "font-semibold text-gray-800 dark:text-gray-200"
+          : "font-normal text-gray-600 dark:text-gray-400",
+        "hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
+      )}
+    >
+      <span>{text}</span>
     </NextLink>
   );
 };
@@ -53,7 +52,11 @@ export const Header = () => {
         <div className="ml-[-0.60rem]">
           <MobileMenu />
           {MenuItems.map((menuItem) => (
-            <NavItem href={menuItem.href} text={menuItem.title} />
+            <NavItem
+              key={menuItem.href}
+              href={menuItem.href}
+              text={menuItem.title}
+            />
           ))}
         </div>
         <button

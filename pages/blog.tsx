@@ -2,6 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import Link from "next/link";
 import path from "path";
+import Image from "next/image";
 
 export default function Blog({ blogPosts }: any) {
   return (
@@ -31,7 +32,7 @@ export default function Blog({ blogPosts }: any) {
                   <p className={"text-gray-500 mt-3"}>{date}</p>
                 </div>
                 {frontMatter.thumbnailUrl && (
-                  <img
+                  <Image
                     src={frontMatter.thumbnailUrl}
                     alt={"blog-pic"}
                     className={"h-24 w-24 md:h-40 md:w-40 rounded-2xl"}
@@ -39,7 +40,7 @@ export default function Blog({ blogPosts }: any) {
                 )}
               </div>
             </Link>
-            <hr className="w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
+            <hr className="w-full lg:w-1/4 border-1 border-gray-200 dark:border-gray-800 mb-8" />
           </>
         );
       })}
