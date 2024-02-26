@@ -22,18 +22,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
 
       - uses: pnpm/action-setup@v3
         name: Install pnpm
         with:
           version: 8
           run_install: false
-  
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
   
       - name: Install dependencies
         run: pnpm install
