@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Markdoc from "@markdoc/markdoc";
+import Image from "next/image";
 
 const Snippet = (props: any) => {
   const { frontMatter, content } = props;
@@ -21,7 +22,7 @@ const Snippet = (props: any) => {
             </p>
           </div>
           <div className="mt-2 sm:mt-0">
-            <img
+            <Image
               alt={frontMatter.title}
               height={48}
               width={48}
