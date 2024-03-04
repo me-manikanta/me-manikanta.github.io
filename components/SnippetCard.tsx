@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SnippetMatter } from "../utils/types";
 
 export default function SnippetCard({
@@ -10,7 +11,7 @@ export default function SnippetCard({
   return (
     <Link href={`/snippets/${slug}`}>
       <div className="border border-grey-200 dark:border-gray-800 rounded p-4 w-full bg-white dark:bg-gray-900">
-        <img
+        <Image
           alt={title}
           height={32}
           width={32}
