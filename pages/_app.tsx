@@ -3,10 +3,18 @@ import "../styles/globals.css";
 import { Header } from "../components/Header";
 import { ThemeProvider } from "next-themes";
 import Footer from "../components/Footer";
+import { ComponentProps, ReactNode } from "react";
+
+type ExistingThemeProviderProps = ComponentProps<typeof ThemeProvider> & {
+  children: ReactNode;
+};
+const ThemeProviderExtended = (props: ExistingThemeProviderProps) => (
+  <ThemeProvider {...props} />
+);
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProviderExtended attribute="class">
       <Header />
       <main
         id="skip"
@@ -15,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
         <Footer />
       </main>
-    </ThemeProvider>
+    </ThemeProviderExtended>
   );
 }
 
