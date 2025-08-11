@@ -1,29 +1,32 @@
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
-import { Header } from "../components/Header";
-import { ThemeProvider } from "next-themes";
-import Footer from "../components/Footer";
+import { Sidebar } from "../components/Sidebar";
 import { ComponentProps, ReactNode } from "react";
-
-type ExistingThemeProviderProps = ComponentProps<typeof ThemeProvider> & {
-  children: ReactNode;
-};
-const ThemeProviderExtended = (props: ExistingThemeProviderProps) => (
-  <ThemeProvider {...props} />
-);
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProviderExtended attribute="class">
-      <Header />
-      <main
-        id="skip"
-        className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900"
-      >
-        <Component {...pageProps} />
-        <Footer />
-      </main>
-    </ThemeProviderExtended>
+    <div className="dark">
+      <div className="min-h-screen bg-gray-900">
+        <div className="max-w-6xl mx-auto px-8 py-8">
+          <div className="flex flex-col lg:flex-row lg:gap-16">
+            {/* Main content */}
+            <main
+              id="skip"
+              className="flex-1 max-w-4xl"
+            >
+              <Component {...pageProps} />
+            </main>
+            
+            {/* Navigation sidebar */}
+            <aside className="lg:w-48 lg:flex-shrink-0 mt-8 lg:mt-0">
+              <div className="lg:sticky lg:top-8">
+                <Sidebar />
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
