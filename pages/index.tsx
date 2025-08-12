@@ -7,7 +7,6 @@ import { ExternalLink } from "../components/ExternalLink";
 const Home: NextPage = () => {
   return (
     <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
-      {/* Hero Section */}
       <div className="flex flex-col-reverse sm:flex-row items-start mb-16">
         <div className="flex flex-col pr-8">
           <AnimatedTitle />
@@ -25,7 +24,7 @@ const Home: NextPage = () => {
             alt="Manikanta Inugurthi"
             height={176}
             width={176}
-            src="/assets/selfie.jpeg"
+            src="/assets/selfie.jpg"
             sizes="30vw"
             priority
             className="rounded-full filter"
@@ -33,7 +32,6 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      {/* About Section */}
       <div className="w-full">
         <div className="mb-8 prose dark:prose-dark leading-6">
           <h2 className="text-gray-200">Bio</h2>
