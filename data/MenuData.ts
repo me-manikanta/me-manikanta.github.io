@@ -15,13 +15,18 @@ export const MenuItems = [
     transitionDelay: "175ms",
   },
   {
+    href: "/tools",
+    title: "tools",
+    transitionDelay: "200ms",
+  },
+  {
     href: "https://www.linkedin.com/in/manikantainugurthi/",
     title: "follow ↗",
-    transitionDelay: "200ms",
+    transitionDelay: "225ms",
   },
   {
     href: "https://github.com/me-manikanta",
     title: "code ↗",
-    transitionDelay: "225ms",
+    transitionDelay: "250ms",
   },
 ];

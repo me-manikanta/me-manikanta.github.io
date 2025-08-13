@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div className="min-h-screen bg-gray-900">
         <div className="max-w-6xl mx-auto px-8 py-8">
           <div className="flex flex-col lg:flex-row lg:gap-16">
-            {/* Main content */}
             <main
               id="skip"
               className="flex-1 max-w-4xl"
@@ -17,7 +16,6 @@ function MyApp({ Component, pageProps }: AppProps) {
               <Component {...pageProps} />
             </main>
             
-            {/* Navigation sidebar */}
             <aside className="lg:w-48 lg:flex-shrink-0 mt-8 lg:mt-0">
               <div className="lg:sticky lg:top-8">
                 <Sidebar />
