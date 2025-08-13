@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
-import { Copy, RefreshCw } from "lucide-react";
+import { Copy, RefreshCw, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 type MainType = 'String' | 'Array' | 'Matrix' | 'Tree' | 'Graph' | 'Custom';
 type ArraySubType = 'char' | 'string' | 'int' | 'double' | 'bool';
@@ -415,9 +416,17 @@ export default function TestCaseGenerator() {
   return (
     <div className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16 w-full">
-        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
-          Test Case Generator
-        </h1>
+        <div className="flex items-center gap-4 mb-4">
+          <Link 
+            href="/tools"
+            className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+          >
+            <ArrowLeft className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+          </Link>
+          <h1 className="text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
+            Test Case Generator
+          </h1>
+        </div>
         <p className="mb-8 text-gray-600 dark:text-gray-400">
           Create custom test data for your coding challenges and algorithm problems.
         </p>
