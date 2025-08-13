@@ -47,10 +47,10 @@ const tools: Tool[] = [
     category: "Design"
   },
   {
-    name: "LeetCode Test Case Generator",
+    name: "Test Case Generator",
     description: "Generate test cases for LeetCode problems with custom inputs",
     url: "/tools/leetcode-generator",
-    category: "Development"
+    category: "Coding"
   }
 ];
 
