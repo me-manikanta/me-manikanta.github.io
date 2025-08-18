@@ -6,7 +6,6 @@ import { Code, Filter } from "lucide-react";
 import SnippetCard from "../components/SnippetCard";
 
 export default function Snippets({ snippets }: any) {
-  // Extract all unique tags from snippets
   const allTags = Array.from(
     new Set(
       snippets
@@ -36,7 +35,6 @@ export default function Snippets({ snippets }: any) {
           Some handy code snippets and commands for everyday development tasks.
         </p>
         
-        {/* Filter Section */}
         {allTags.length > 0 && (
           <div className="w-full mb-6">
             <div className="flex flex-wrap gap-2">
