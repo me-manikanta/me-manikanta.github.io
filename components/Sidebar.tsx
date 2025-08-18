@@ -39,7 +39,7 @@ const NavItem = ({ href, text }: any) => {
 
 export const Sidebar = () => {
   return (
-    <nav className="flex flex-col space-y-2 text-right">
+    <nav className="flex flex-col lg:flex-col space-y-2 lg:space-x-0 lg:space-y-2 text-center lg:text-right overflow-x-auto lg:overflow-x-visible justify-center lg:justify-start">
       {MenuItems.map((menuItem) => (
         <NavItem
           key={menuItem.href}

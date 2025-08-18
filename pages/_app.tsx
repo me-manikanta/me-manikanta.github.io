@@ -16,12 +16,18 @@ function MyApp({ Component, pageProps }: AppProps) {
               <Component {...pageProps} />
             </main>
             
-            <aside className="lg:w-48 lg:flex-shrink-0 mt-8 lg:mt-0">
+            {/* Desktop sidebar - right side */}
+            <aside className="hidden lg:block lg:w-48 lg:flex-shrink-0 mt-8 lg:mt-0">
               <div className="lg:sticky lg:top-8">
                 <Sidebar />
               </div>
             </aside>
           </div>
+          
+          {/* Mobile sidebar - below content */}
+          <aside className="lg:hidden mt-8">
+            <Sidebar />
+          </aside>
         </div>
       </div>
     </div>
