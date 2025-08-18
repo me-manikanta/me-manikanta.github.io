@@ -1,10 +1,22 @@
-import type { NextPage } from "next";
+import type { NextPage, GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import Markdoc from "@markdoc/markdoc";
 import AnimatedTitle from "../components/AnimatedTitle";
 import { ExternalLink } from "../components/ExternalLink";
 
-const Home: NextPage = () => {
+interface HomeProps {
+  bioContent: string;
+}
+
+const Home: NextPage<HomeProps> = ({ bioContent }) => {
+  const ast = Markdoc.parse(bioContent);
+  const mdContent = Markdoc.transform(ast);
+
   return (
     <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
       <div className="flex flex-col-reverse sm:flex-row items-start mb-16">
@@ -19,7 +31,7 @@ const Home: NextPage = () => {
             <span className="text-4xl">&#9749;</span>
           </p>
         </div>
-        <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
+        <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mx-auto sm:mr-0">
           <Image
             alt="Manikanta Inugurthi"
             height={176}
@@ -34,42 +46,23 @@ const Home: NextPage = () => {
 
       <div className="w-full">
         <div className="mb-8 prose dark:prose-dark leading-6">
-          <h2 className="text-gray-200">Bio</h2>
-          <p className="text-gray-400">
-            Hey I am Mani. I work as an ML Ops Engineer at{" "}
-            <ExternalLink href="https://www.microsoft.com/">Microsoft</ExternalLink>, where I
-            and my team help in building translation models.
-          </p>
-          <p className="text-gray-400">
-            Graduated from Birla Institute of Technology, Mesra with a B.E. in
-            Information Technology.
-          </p>
-          
-          <h2 className="text-gray-200">Links</h2>
-          <ul className="text-gray-400">
-            <li>
-              Twitter:{" "}
-              <ExternalLink href="https://twitter.com/me_manikanta">
-                @me_manikanta
-              </ExternalLink>
-            </li>
-            <li>
-              GitHub:{" "}
-              <ExternalLink href="https://github.com/me-manikanta">
-                @me-manikanta
-              </ExternalLink>
-            </li>
-            <li>
-              LinkedIn:{" "}
-              <ExternalLink href="https://www.linkedin.com/in/manikantainugurthi/">
-                manikantainugurthi
-              </ExternalLink>
-            </li>
-          </ul>
+          {Markdoc.renderers.react(mdContent, React)}
         </div>
       </div>
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const bioPath = path.join("meta", "bio.md");
+  const bioFile = fs.readFileSync(bioPath, "utf8");
+  const { content: bioContent } = matter(bioFile);
+
+  return {
+    props: {
+      bioContent,
+    },
+  };
 };
 
 export default Home;
