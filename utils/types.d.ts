@@ -3,4 +3,5 @@ export type SnippetMatter = {
   description: string;
   logo: string;
   slug: string;
+  tags?: string[];
 };
