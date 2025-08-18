@@ -34,7 +34,7 @@ export default function MobileMenu() {
   return (
     <>
       <button
-        className={cn(styles.burger, "visible md:hidden")}
+        className={cn(styles.burger, "fixed bottom-6 left-6 z-50")}
         aria-label="Toggle menu"
         type="button"
         onClick={toggleMenu}
@@ -46,19 +46,21 @@ export default function MobileMenu() {
         <ul
           className={cn(
             styles.menu,
-            "flex flex-col absolute bg-gray-100 dark:bg-gray-900",
+            "flex flex-col fixed",
+            "bg-white dark:bg-gray-800",
+            "text-gray-900 dark:text-gray-100",
             isMenuRendered && styles.menuRendered
           )}
         >
           {MenuItems.map((menuItem) => (
             <li
               key={menuItem.href}
-              className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
+              className="border-b border-gray-200 dark:border-gray-600 text-gray-900 dark:text-gray-100 text-sm font-semibold"
               style={{
                 transitionDelay: menuItem.transitionDelay,
               }}
             >
-              <Link className="flex w-auto pb-4" href={menuItem.href}>
+              <Link className="flex w-auto pb-4 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href={menuItem.href}>
                 {menuItem.title}
               </Link>
             </li>
@@ -72,9 +74,9 @@ export default function MobileMenu() {
 function MenuIcon(props: JSX.IntrinsicElements["svg"]) {
   return (
     <svg
-      className="h-5 w-5 absolute text-gray-900 dark:text-gray-100"
-      width="20"
-      height="20"
+      className="h-6 w-6 absolute text-white"
+      width="24"
+      height="24"
       viewBox="0 0 20 20"
       fill="none"
       {...props}
@@ -100,7 +102,7 @@ function MenuIcon(props: JSX.IntrinsicElements["svg"]) {
 function CrossIcon(props: JSX.IntrinsicElements["svg"]) {
   return (
     <svg
-      className="h-5 w-5 absolute text-gray-900 dark:text-gray-100"
+      className="h-6 w-6 absolute text-white"
       viewBox="0 0 24 24"
       width="24"
       height="24"
