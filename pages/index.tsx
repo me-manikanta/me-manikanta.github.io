@@ -6,7 +6,6 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Markdoc from "@markdoc/markdoc";
-import AnimatedTitle from "../components/AnimatedTitle";
 import { ExternalLink } from "../components/ExternalLink";
 import config, { components } from "../markdoc.config";
 
@@ -22,7 +21,12 @@ const Home: NextPage<HomeProps> = ({ bioContent }) => {
     <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
       <div className="flex flex-col-reverse sm:flex-row items-start mb-16">
         <div className="flex flex-col pr-8">
-          <AnimatedTitle />
+          <h1
+            style={{ fontFamily: "Space Mono, monospace" }}
+            className="text-2xl md:text-4xl tracking-tight mb-1 text-black dark:text-white"
+          >
+            Manikanta Inugurthi
+          </h1>
           <h2 className="text-gray-700 dark:text-gray-200 mb-4">
             Software Engineer II in Machine Translation team at{" "}
             <span className="font-semibold">Microsoft</span>
