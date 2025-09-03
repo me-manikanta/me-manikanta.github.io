@@ -1,6 +1,8 @@
 ---
 title: Logging best practices that I follow
 date: "April 10, 2022"
+tags: ["debugging", "best practices"]
+category: "Development"
 ---
 
 At the beginning of my coding career, I mostly wrote logs (print statements 😜) when debugging an issue and removed them (unsaid rule) after the bug was fixed. But when I became a backend developer, I realised the importance of logging. In this blog, I am listing down all the things that I've learned in the past few years and the rules I follow when writing log statements.
