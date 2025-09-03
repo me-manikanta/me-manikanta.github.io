@@ -1,6 +1,8 @@
 ---
 title: Let's discuss commit messages
 date: "July 10, 2022"
+tags: ["git", "development", "best practices"]
+category: "Development"
 ---
 
 We all know what a commit message is, and probably write at least 1 commit message every day. But how confident we are that we'll understand the changes we made in a commit by reading only the message after some time?

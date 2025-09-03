@@ -22,7 +22,6 @@ const Home: NextPage<HomeProps> = ({ bioContent }) => {
       <div className="flex flex-col-reverse sm:flex-row items-start mb-16">
         <div className="flex flex-col pr-8">
           <h1
-            style={{ fontFamily: "Space Mono, monospace" }}
             className="text-2xl md:text-4xl tracking-tight mb-1 text-black dark:text-white"
           >
             Manikanta Inugurthi

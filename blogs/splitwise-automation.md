@@ -1,6 +1,8 @@
 ---
 title: Splitwise Automation to send expense updates
 date: "September 28, 2022"
+tags: ["python", "side project sunday", "automation"]
+category: "Project"
 ---
 
 # Introduction

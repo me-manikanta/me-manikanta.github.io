@@ -2,6 +2,8 @@
 title: "How-to: Python Paramiko"
 date: "March 6, 2022"
 description: A how-to guide for using the Python Paramiko library.
+tags: ["python", "tutorial"]
+category: "Tutorial"
 ---
 
 # Background
