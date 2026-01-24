@@ -27,7 +27,7 @@ const Home: NextPage<HomeProps> = ({ bioContent }) => {
             Manikanta Inugurthi
           </h1>
           <h2 className="text-gray-700 dark:text-gray-200 mb-4">
-            Software Engineer II in Machine Translation team at{" "}
+            Senior Software Engineer at{" "}
             <span className="font-semibold">Microsoft</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mt-8">
