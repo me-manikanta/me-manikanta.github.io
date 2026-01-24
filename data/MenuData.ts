@@ -20,13 +20,18 @@ export const MenuItems = [
     transitionDelay: "200ms",
   },
   {
+    href: "/assets/Manikanta%20Inugurthi%20Resume.pdf",
+    title: "resume",
+    transitionDelay: "225ms",
+  },
+  {
     href: "https://www.linkedin.com/in/manikantainugurthi/",
     title: "follow ↗",
-    transitionDelay: "225ms",
+    transitionDelay: "250ms",
   },
   {
     href: "https://github.com/me-manikanta",
     title: "code ↗",
-    transitionDelay: "250ms",
+    transitionDelay: "275ms",
   },
 ];
