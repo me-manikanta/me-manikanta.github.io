@@ -17,3 +17,11 @@ Prefer using `--force-with-lease` instead
 ```sh
 git push --force-with-lease origin <branch_name>
 ```
+
+### Alias
+
+Configure an alias for easier usage:
+
+```sh
+git config --global alias.pf "push --force-with-lease"
+```
