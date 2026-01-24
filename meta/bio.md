@@ -1,11 +1,11 @@
 ## Bio
 
-Hey I am Mani. I work as an ML Ops Engineer at [Microsoft](https://www.microsoft.com/), where I and my team help in building translation models.
+Hey, I'm Mani — a Senior Software Engineer at [Microsoft](https://www.microsoft.com/) in Hyderabad. I work on backend systems for Text-to-Speech (TTS), improving Indic locales and neural voice experiences.
 
-Graduated from Birla Institute of Technology, Mesra with a B.E. in Information Technology.
+Earlier, I worked on backend systems for machine translation, helping ship translation models into production.
 
-## Links
+Day to day, I mostly write C#, Python, and TypeScript and enjoy working on distributed systems, performance, and developer experience.
 
-- Twitter: [@me_manikanta](https://twitter.com/me_manikanta)
-- GitHub: [@me-manikanta](https://github.com/me-manikanta)
-- LinkedIn: [manikantainugurthi](https://www.linkedin.com/in/manikantainugurthi/)
+You can find more of my writing on the [blog](/blog) or view my [resume](/resume).
+
+For anything else — roles, projects, or just a hello — reach me at [email](mailto:mani.inugurthi+hi@gmail.com) or on [LinkedIn](https://www.linkedin.com/in/manikantainugurthi/).
