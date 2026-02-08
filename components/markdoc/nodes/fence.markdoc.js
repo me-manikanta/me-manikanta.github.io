@@ -1,4 +1,4 @@
-export default {
+const fenceConfig = {
   render: "CodeBlock",
   attributes: {
     language: {
@@ -6,3 +6,5 @@ export default {
     },
   },
 };
+
+export default fenceConfig;

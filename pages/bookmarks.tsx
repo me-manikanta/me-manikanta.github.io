@@ -26,7 +26,7 @@ export default function Bookmarks() {
           </h1>
         </div>
         <p className="mb-8 text-gray-600 dark:text-gray-400">
-          A collection of interesting links, tools, and resources I've found on
+          A collection of interesting links, tools, and resources I&apos;ve found on
           Web.
         </p>
 
