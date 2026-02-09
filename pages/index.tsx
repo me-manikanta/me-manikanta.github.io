@@ -7,6 +7,7 @@ import path from "path";
 import matter from "gray-matter";
 import Markdoc from "@markdoc/markdoc";
 import { ExternalLink } from "../components/ExternalLink";
+import { Avatar } from "../components/Avatar";
 import config, { components } from "../markdoc.config";
 
 interface HomeProps {
@@ -35,16 +36,21 @@ const Home: NextPage<HomeProps> = ({ bioContent }) => {
             <span className="text-4xl">&#9749;</span>
           </p>
         </div>
-        <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mx-auto sm:mr-0">
-          <Image
-            alt="Manikanta Inugurthi"
-            height={176}
-            width={176}
-            src="/assets/selfie.jpg"
-            sizes="30vw"
-            priority
-            className="rounded-full filter"
-          />
+        <div className="relative mb-8 sm:mb-0 mx-auto sm:mr-0">
+          <div className="block sm:hidden">
+            <Avatar
+              alt="Manikanta Inugurthi"
+              src="/assets/selfie.png"
+              size={100}
+            />
+          </div>
+          <div className="hidden sm:block">
+            <Avatar
+              alt="Manikanta Inugurthi"
+              src="/assets/selfie.png"
+              size={200}
+            />
+          </div>
         </div>
       </div>
 
