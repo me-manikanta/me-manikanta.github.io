@@ -15,7 +15,7 @@ const NavItem = ({ href, text }: any) => {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="block py-1 text-sm text-gray-400 hover:text-gray-200 transition-colors whitespace-nowrap"
+        className="block py-2 text-sm text-gray-400 hover:text-gray-200 transition-colors whitespace-nowrap"
       >
         {text}
       </a>
@@ -29,7 +29,7 @@ const NavItem = ({ href, text }: any) => {
         isActive
           ? "text-gray-200"
           : "text-gray-400 hover:text-gray-200",
-        "block py-1 text-sm transition-colors whitespace-nowrap"
+        "block py-2 text-sm transition-colors whitespace-nowrap"
       )}
     >
       {text}

@@ -21,7 +21,7 @@ const Home: NextPage<HomeProps> = ({ bioContent }) => {
   return (
     <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
       <div className="flex flex-col-reverse sm:flex-row items-start mb-16">
-        <div className="flex flex-col pr-8">
+        <div className="flex flex-col sm:pr-8">
           <h1
             className="text-2xl md:text-4xl tracking-tight mb-1 text-black dark:text-white"
           >
