@@ -1,4 +1,5 @@
 import type { AppProps } from "next/app";
+import Head from "next/head";
 import "../styles/globals.css";
 import "../styles/avatar.css";
 import { Sidebar } from "../components/Sidebar";
@@ -7,8 +8,14 @@ import { ComponentProps, ReactNode } from "react";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="dark">
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        />
+      </Head>
       <div className="min-h-screen bg-gray-900">
-        <div className="max-w-6xl mx-auto px-8 py-8">
+        <div className="max-w-6xl mx-auto px-4 py-6 sm:px-8 sm:py-8">
           <div className="flex flex-col md:flex-row md:gap-16">
             <main
               id="skip"
