@@ -8,6 +8,7 @@ import matter from "gray-matter";
 import Markdoc from "@markdoc/markdoc";
 import { ExternalLink } from "../components/ExternalLink";
 import { Avatar } from "../components/Avatar";
+import SEO from "../components/SEO";
 import config, { components } from "../markdoc.config";
 
 interface HomeProps {
@@ -20,6 +21,7 @@ const Home: NextPage<HomeProps> = ({ bioContent }) => {
 
   return (
     <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
+      <SEO />
       <div className="flex flex-col-reverse sm:flex-row items-start mb-16">
         <div className="flex flex-col sm:pr-8">
           <h1

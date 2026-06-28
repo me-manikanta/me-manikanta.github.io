@@ -1,10 +1,15 @@
 import Link from "next/link";
 
 import { ExternalLink } from "../components/ExternalLink";
+import SEO from "../components/SEO";
 
 export default function About() {
   return (
     <div>
+      <SEO
+        title="About"
+        description="About Manikanta Inugurthi — Senior Software Engineer at Microsoft. Background, links, and how to get in touch."
+      />
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           About Me

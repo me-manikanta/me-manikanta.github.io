@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Bookmark } from "lucide-react";
 import { Bookmarks as BookmarksData } from "../data/Bookmarks";
+import SEO from "../components/SEO";
 
 export default function Bookmarks() {
   const allTags = Array.from(
@@ -18,6 +19,11 @@ export default function Bookmarks() {
 
   return (
     <div className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900">
+      <SEO
+        title="Bookmarks"
+        description="A collection of interesting links, tools, and resources I've found on the web."
+        noindex
+      />
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
         <div className="flex items-center gap-3 mb-4">
           <Bookmark className="w-8 h-8 text-gray-900 dark:text-white" />

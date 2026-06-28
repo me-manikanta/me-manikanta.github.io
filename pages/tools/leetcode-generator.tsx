@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { Copy, RefreshCw, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import SEO from "../../components/SEO";
 
 type MainType = 'String' | 'Array' | 'Matrix' | 'Tree' | 'Graph' | 'Custom';
 type ArraySubType = 'char' | 'string' | 'int' | 'double' | 'bool';
@@ -415,6 +416,11 @@ export default function TestCaseGenerator() {
 
   return (
     <div className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900">
+      <SEO
+        title="Test Case Generator"
+        description="Generate test cases for LeetCode problems with custom inputs."
+        noindex
+      />
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16 w-full">
         <div className="flex items-center gap-4 mb-4">
           <Link 

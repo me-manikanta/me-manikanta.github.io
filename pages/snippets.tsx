@@ -4,6 +4,7 @@ import path from "path";
 import React, { useState } from "react";
 import { Code, Filter } from "lucide-react";
 import SnippetCard from "../components/SnippetCard";
+import SEO from "../components/SEO";
 
 export default function Snippets({ snippets }: any) {
   const allTags = Array.from(
@@ -24,6 +25,10 @@ export default function Snippets({ snippets }: any) {
 
   return (
     <div className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900">
+      <SEO
+        title="Snippets"
+        description="Handy code snippets and commands for everyday development tasks, collected by Manikanta Inugurthi."
+      />
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
         <div className="flex items-center gap-3 mb-4">
           <Code className="w-8 h-8 text-gray-900 dark:text-white" />

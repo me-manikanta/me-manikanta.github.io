@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ExternalLink, Wrench, Filter } from "lucide-react";
 import Link from "next/link";
+import SEO from "../components/SEO";
 
 interface Tool {
   name: string;
@@ -107,6 +108,11 @@ export default function Tools() {
 
   return (
     <div className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900">
+      <SEO
+        title="Tools"
+        description="A curated collection of useful tools and resources I use regularly for development, design, and productivity."
+        noindex
+      />
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
         <div className="flex items-center gap-3 mb-4">
           <Wrench className="w-8 h-8 text-gray-900 dark:text-white" />

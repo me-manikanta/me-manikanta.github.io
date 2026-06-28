@@ -4,6 +4,7 @@ import path from "path";
 import React, { useState } from "react";
 import { BookOpen } from "lucide-react";
 import BlogCard from "../components/BlogCard";
+import SEO from "../components/SEO";
 
 export default function Blog({ blogPosts }: any) {
   // Extract all unique tags from blog posts
@@ -36,6 +37,10 @@ export default function Blog({ blogPosts }: any) {
 
   return (
     <div className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900">
+      <SEO
+        title="Blog"
+        description="Thoughts on software development, tech insights, and learnings from my journey — by Manikanta Inugurthi."
+      />
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
         <div className="flex items-center gap-3 mb-4">
           <BookOpen className="w-8 h-8 text-gray-900 dark:text-white" />

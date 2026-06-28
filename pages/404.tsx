@@ -1,10 +1,12 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import SEO from "../components/SEO";
 
 const NotFoundPage: NextPage = () => {
   return (
     <>
+      <SEO title="404 – Page Not Found" noindex />
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           404 – Page Not Found
