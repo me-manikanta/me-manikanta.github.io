@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Manikanta Inugurthi — Blog</title>
+    <link>https://me-manikanta.github.io/blog</link>
+    <description>Thoughts on software development, tech insights, and learnings from my journey.</description>
+    <language>en-us</language>
+    <managingEditor>mani.inugurthi+hi@gmail.com (Manikanta Inugurthi)</managingEditor>
+    <webMaster>mani.inugurthi+hi@gmail.com (Manikanta Inugurthi)</webMaster>
+    <lastBuildDate>Sun, 28 Jun 2026 18:38:27 GMT</lastBuildDate>
+    <atom:link href="https://me-manikanta.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I track my expenses</title>
+      <link>https://me-manikanta.github.io/blog/track-expenses</link>
+      <guid isPermaLink="true">https://me-manikanta.github.io/blog/track-expenses</guid>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 GMT</pubDate>
+      <description>How I finally track my expenses without the usual laziness - a simple Excel-based system that does the job without fancy software.</description>
+    </item>
+    <item>
+      <title>Splitwise Automation to send expense updates</title>
+      <link>https://me-manikanta.github.io/blog/splitwise-automation</link>
+      <guid isPermaLink="true">https://me-manikanta.github.io/blog/splitwise-automation</guid>
+      <pubDate>Wed, 28 Sep 2022 00:00:00 GMT</pubDate>
+      <description>A Side-Project-Sunday build that automates Splitwise to total my monthly expenses across the app using its API and a bit of Python.</description>
+    </item>
+    <item>
+      <title>Let&apos;s discuss commit messages</title>
+      <link>https://me-manikanta.github.io/blog/commit-messages</link>
+      <guid isPermaLink="true">https://me-manikanta.github.io/blog/commit-messages</guid>
+      <pubDate>Sun, 10 Jul 2022 00:00:00 GMT</pubDate>
+      <description>Why good commit messages matter, and a practical structure for writing them so you and your team can understand changes months later.</description>
+    </item>
+    <item>
+      <title>Logging best practices that I follow</title>
+      <link>https://me-manikanta.github.io/blog/logging-best-practices</link>
+      <guid isPermaLink="true">https://me-manikanta.github.io/blog/logging-best-practices</guid>
+      <pubDate>Sun, 10 Apr 2022 00:00:00 GMT</pubDate>
+      <description>Practical logging best practices from years as a backend developer — log levels, what to record, and rules for writing useful log statements.</description>
+    </item>
+    <item>
+      <title>How-to: Python Paramiko</title>
+      <link>https://me-manikanta.github.io/blog/python-paramiko</link>
+      <guid isPermaLink="true">https://me-manikanta.github.io/blog/python-paramiko</guid>
+      <pubDate>Sun, 06 Mar 2022 00:00:00 GMT</pubDate>
+      <description>A how-to guide for using the Python Paramiko library.</description>
+    </item>
+  </channel>
+</rss>
