@@ -12,6 +12,14 @@ export default function Document() {
         {/* Meta tags for better favicon support */}
         <meta name="msapplication-TileImage" content="/favicon.png" />
         <meta name="theme-color" content="#111827" />
+
+        {/* RSS feed */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Manikanta Inugurthi — Blog"
+          href="/feed.xml"
+        />
       </Head>
       <body>
         <Main />
