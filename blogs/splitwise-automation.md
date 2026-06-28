@@ -1,6 +1,7 @@
 ---
 title: Splitwise Automation to send expense updates
 date: "September 28, 2022"
+description: A Side-Project-Sunday build that automates Splitwise to total my monthly expenses across the app using its API and a bit of Python.
 tags: ["python", "side project sunday", "automation"]
 category: "Project"
 ---

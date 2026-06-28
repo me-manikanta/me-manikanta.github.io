@@ -1,6 +1,7 @@
 ---
 title: How I track my expenses
 date: "June 28, 2026"
+description: How I finally track my expenses without the usual laziness - a simple Excel-based system that does the job without fancy software.
 tags: ["finance"]
 category: "Softwares I use"
 thumbnailUrl: "/assets/track-expenses.png"

@@ -47,7 +47,7 @@ export default function About() {
           <h2>Bio</h2>
           <h3>Job Title</h3>
           <p>
-            Manikanta Inugurthi, Software Engineer II at{" "}
+            Manikanta Inugurthi, Senior Software Engineer at{" "}
             <Link href="https://www.microsoft.com/">Microsoft</Link>.
           </p>
           <h3>Education</h3>
@@ -57,9 +57,9 @@ export default function About() {
           </p>
           <h3>Short Description</h3>
           <p>
-            Hey I am Mani. I work as an ML Ops Engineer at{" "}
+            Hey I am Mani. I work as a Senior Software Engineer at{" "}
             <Link href="https://www.microsoft.com/">Microsoft</Link>, where I
-            and my team help in building translation models.
+            and my team build backend systems for Text-to-Speech (TTS).
           </p>
         </div>
       </div>

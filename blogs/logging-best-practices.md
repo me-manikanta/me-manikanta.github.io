@@ -1,6 +1,7 @@
 ---
 title: Logging best practices that I follow
 date: "April 10, 2022"
+description: Practical logging best practices from years as a backend developer — log levels, what to record, and rules for writing useful log statements.
 tags: ["debugging", "best practices"]
 category: "Development"
 ---

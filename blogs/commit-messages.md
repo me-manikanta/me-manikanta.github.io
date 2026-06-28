@@ -1,6 +1,7 @@
 ---
 title: Let's discuss commit messages
 date: "July 10, 2022"
+description: Why good commit messages matter, and a practical structure for writing them so you and your team can understand changes months later.
 tags: ["git", "development", "best practices"]
 category: "Development"
 ---
