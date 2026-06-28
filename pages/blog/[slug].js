@@ -6,14 +6,18 @@ import Markdoc from "@markdoc/markdoc";
 import config, { components } from "../../markdoc.config";
 import SEO from "../../components/SEO";
 import { excerpt, toISODate } from "../../utils/posts";
+import { blogPostingJsonLd } from "../../utils/structuredData";
 
 const Blog = (props) => {
-  const { frontMatter, content } = props;
+  const { frontMatter, slug, content } = props;
 
   const ast = Markdoc.parse(content);
   const mdContent = Markdoc.transform(ast, config);
   const description = frontMatter.description || excerpt(content);
   const ogImage = frontMatter.ogImage || frontMatter.thumbnailUrl;
+  const datePublished = frontMatter.date
+    ? toISODate(frontMatter.date)
+    : undefined;
   return (
     <>
       <SEO
@@ -21,10 +25,16 @@ const Blog = (props) => {
         description={description}
         type="article"
         image={ogImage}
-        publishedTime={
-          frontMatter.date ? toISODate(frontMatter.date) : undefined
-        }
+        publishedTime={datePublished}
         tags={frontMatter.tags}
+        jsonLd={blogPostingJsonLd({
+          title: frontMatter.title,
+          description,
+          slug,
+          datePublished,
+          image: ogImage,
+          tags: frontMatter.tags,
+        })}
       />
       <div className="w-full prose dark:prose-dark mx-auto">
         <h1 className="text-center mb-1">{frontMatter.title}</h1>

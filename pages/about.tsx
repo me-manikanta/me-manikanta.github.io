@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { ExternalLink } from "../components/ExternalLink";
 import SEO from "../components/SEO";
+import { personJsonLd } from "../utils/structuredData";
 
 export default function About() {
   return (
@@ -9,6 +10,7 @@ export default function About() {
       <SEO
         title="About"
         description="About Manikanta Inugurthi — Senior Software Engineer at Microsoft. Background, links, and how to get in touch."
+        jsonLd={personJsonLd()}
       />
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
