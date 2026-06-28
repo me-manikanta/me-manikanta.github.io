@@ -151,5 +151,11 @@ export const getStaticProps = async () => {
     };
   });
 
+  blogPosts.sort((a: any, b: any) => {
+    const timeA = new Date(a.frontMatter.date).getTime();
+    const timeB = new Date(b.frontMatter.date).getTime();
+    return (isNaN(timeB) ? 0 : timeB) - (isNaN(timeA) ? 0 : timeA);
+  });
+
   return { props: { blogPosts } };
 };
