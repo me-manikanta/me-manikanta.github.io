@@ -3,6 +3,7 @@ title: How I track my expenses
 date: "June 28, 2026"
 tags: ["finance"]
 category: "Softwares I use"
+thumbnailUrl: "/assets/track-expenses.png"
 ---
 
 ## The Problem
@@ -17,7 +18,7 @@ This feeling isn’t new to me. I always feel like this: search for some app tha
 
 But this time around, I wanted a simple and easier solution. As a software engineer, I wanted to build an app that tracks my spending automatically. I started the project, ended up procrastinating, and didn’t build anything.
 
-But thanks to the YouTube algorithm, my searches led it to recommend an amazing video on how to simply track expenses in Excel, no fancy software, nothing else.
+But thanks to the YouTube algorithm, my searches led it to recommend an [amazing video](https://youtu.be/eKyAOjH3Crk?si=SbUOfk8ZCyuMtJr8) on how to simply track expenses in Excel, no fancy software, nothing else.
 
 Although I could buy the template from their website (spoiler: I did buy it), I wanted to follow the tutorial myself. It was quite long, but part of my mind said that if I invested the time now, I’d feel bad later if I didn’t use the template and track my expenses.
 
@@ -63,7 +64,7 @@ In my case, I wanted something stable that keeps me sane and just tracks my expe
 
 I did have clarity on the requirements I needed for my expense tracker app. A few of them: it should be open source with a good community around it, self-hostable, and private, I own my data, and no one else.
 
-With these filters, I found two great apps: “Actual” and “Firefly III”. Actual was recommended by my friend, and I instantly fell in love with it, because it has a UI similar to the Excel I’m familiar with, and it also has all the features I need (more than I need).
+With these filters, I found two great apps: [“Actual”](https://actualbudget.org) and [“Firefly III”](https://firefly-iii.org). Actual was recommended by my friend, and I instantly fell in love with it, because it has a UI similar to the Excel I’m familiar with, and it also has all the features I need (more than I need).
 
 The same is true for “Firefly III”, but its only challenge is a bit of a learning curve, so it would be great for advanced tracking. Both have amazing documentation and a great community as well. No YouTube videos though :(.
 
@@ -102,3 +103,9 @@ If you’re reading this line, that means you’ve actually read the article. Th
 But another part of my mind said: you should write it. What’s there to lose? If no one reads this, that’s okay, life is the same as usual. But if at least one person reads it, that’s a win. Again, nothing changes :P.
 
 Anyway, thank you for reading till the last word. Cheers :D
+
+## References
+
+- [Track expenses in Excel (YouTube)](https://youtu.be/eKyAOjH3Crk?si=SbUOfk8ZCyuMtJr8)
+- [Actual](https://actualbudget.org)
+- [Firefly III](https://firefly-iii.org)
