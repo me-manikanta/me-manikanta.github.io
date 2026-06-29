@@ -32,6 +32,27 @@ function readPosts(dir, urlPrefix) {
     });
 }
 
+function slugifyTag(tag) {
+  return tag
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function readTagUrls(dir) {
+  if (!fs.existsSync(dir)) return [];
+  const slugs = new Set();
+  for (const file of fs.readdirSync(dir).filter((f) => f.endsWith(".md"))) {
+    const { data } = matter(fs.readFileSync(path.join(dir, file), "utf-8"));
+    for (const tag of data.tags ?? []) slugs.add(slugifyTag(tag));
+  }
+  return Array.from(slugs).map((slug) => ({
+    loc: `${SITE_URL}/blog/tag/${slug}`,
+    lastmod: today,
+  }));
+}
+
 const today = toISODate(new Date().toString());
 
 const staticPages = [
@@ -45,6 +66,7 @@ const urls = [
   ...staticPages,
   ...readPosts("blogs", "/blog"),
   ...readPosts("snippets", "/snippets"),
+  ...readTagUrls("blogs"),
 ];
 
 const body = urls

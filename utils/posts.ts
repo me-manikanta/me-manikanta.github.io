@@ -37,3 +37,12 @@ export function toISODate(humanDate: string): string {
   const day = String(d.getDate()).padStart(2, "0");
   return `${year}-${month}-${day}`;
 }
+
+/** Convert a tag label to a URL-safe slug, e.g. "Best Practices" -> "best-practices". */
+export function slugifyTag(tag: string): string {
+  return tag
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
