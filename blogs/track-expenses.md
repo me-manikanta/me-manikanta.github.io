@@ -65,7 +65,7 @@ In my case, I wanted something stable that keeps me sane and just tracks my expe
 
 I did have clarity on the requirements I needed for my expense tracker app. A few of them: it should be open source with a good community around it, self-hostable, and private, I own my data, and no one else.
 
-With these filters, I found two great apps: [“Actual”](https://actualbudget.org) and [“Firefly III”](https://firefly-iii.org). Actual was recommended by my friend, and I instantly fell in love with it, because it has a UI similar to the Excel I’m familiar with, and it also has all the features I need (more than I need).
+With these filters, I found two great apps: [“Actual”](https://actualbudget.org) and [“Firefly III”](https://firefly-iii.org). Actual was recommended by my friend [Raghav](https://raghav.mallampalli.in), and I instantly fell in love with it, because it has a UI similar to the Excel I’m familiar with, and it also has all the features I need (more than I need).
 
 The same is true for “Firefly III”, but its only challenge is a bit of a learning curve, so it would be great for advanced tracking. Both have amazing documentation and a great community as well. No YouTube videos though :(.
 
@@ -77,7 +77,7 @@ First, I started playing around with the app. I downloaded a specific month's ba
 
 Things were pretty good, and I was liking the intuitive UI. Since I was already tracking most of my expenses in Excel, it “would’ve” been easier to import the Excel directly into Actual.
 
-But, me being me, and looking at the power Actual has, I thought: why don’t I import all the bank statements from the past year and manually tag them? (Facepalm.) Yeah, I know I made life hard for myself, but that’s okay.
+But, me being me, and looking at the power Actual has, I thought: why don’t I import all the bank statements from the past year and manually tag them? 🤦🏻‍♂️. Yeah, I know I made life hard for myself, but that’s okay.
 
 I downloaded all the bank statements from January 2025, imported them into Actual, looked at the patterns, created rules, and watched the graphs change live. Although it was tiring, the final output was rewarding, now I have a clear view of where my money is going, plus all the other analysis.
 
