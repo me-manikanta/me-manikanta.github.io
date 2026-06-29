@@ -8,15 +8,18 @@ import matter from "gray-matter";
 import Markdoc from "@markdoc/markdoc";
 import { ExternalLink } from "../components/ExternalLink";
 import { Avatar } from "../components/Avatar";
+import BlogCard from "../components/BlogCard";
 import SEO from "../components/SEO";
 import { personJsonLd, websiteJsonLd } from "../utils/structuredData";
+import { getAllPosts, Post } from "../utils/blog";
 import config, { components } from "../markdoc.config";
 
 interface HomeProps {
   bioContent: string;
+  latestPosts: Post[];
 }
 
-const Home: NextPage<HomeProps> = ({ bioContent }) => {
+const Home: NextPage<HomeProps> = ({ bioContent, latestPosts }) => {
   const ast = Markdoc.parse(bioContent);
   const mdContent = Markdoc.transform(ast, config);
 
@@ -62,6 +65,36 @@ const Home: NextPage<HomeProps> = ({ bioContent }) => {
           {Markdoc.renderers.react(mdContent, React, { components })}
         </div>
       </div>
+
+      {latestPosts.length > 0 && (
+        <div className="w-full mt-8">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-2xl font-bold tracking-tight text-black dark:text-white">
+              Latest writing
+            </h2>
+            <Link
+              href="/blog"
+              className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              All posts →
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 gap-4">
+            {latestPosts.map(({ frontMatter, slug }) => (
+              <BlogCard
+                key={slug}
+                title={frontMatter.title}
+                description={frontMatter.description ?? ""}
+                slug={slug}
+                date={frontMatter.date ?? ""}
+                thumbnailUrl={frontMatter.thumbnailUrl}
+                category={frontMatter.category}
+                tags={frontMatter.tags}
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -71,9 +104,12 @@ export const getStaticProps: GetStaticProps = async () => {
   const bioFile = fs.readFileSync(bioPath, "utf8");
   const { content: bioContent } = matter(bioFile);
 
+  const latestPosts = getAllPosts().slice(0, 3);
+
   return {
     props: {
       bioContent,
+      latestPosts,
     },
   };
 };
