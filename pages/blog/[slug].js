@@ -5,7 +5,7 @@ import matter from "gray-matter";
 import Markdoc from "@markdoc/markdoc";
 import config, { components } from "../../markdoc.config";
 import SEO from "../../components/SEO";
-import { excerpt, toISODate } from "../../utils/posts";
+import { excerpt, toISODate, readingTimeMinutes } from "../../utils/posts";
 import { blogPostingJsonLd } from "../../utils/structuredData";
 
 const Blog = (props) => {
@@ -18,6 +18,7 @@ const Blog = (props) => {
   const datePublished = frontMatter.date
     ? toISODate(frontMatter.date)
     : undefined;
+  const readTime = readingTimeMinutes(content);
   return (
     <>
       <SEO
@@ -38,7 +39,15 @@ const Blog = (props) => {
       />
       <div className="w-full prose dark:prose-dark mx-auto">
         <h1 className="text-center mb-1">{frontMatter.title}</h1>
-        {/* Todo to show date and other metadta here */}
+        <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-0">
+          {readTime} min read
+          {frontMatter.date && (
+            <>
+              {" · "}
+              <time dateTime={datePublished}>{frontMatter.date}</time>
+            </>
+          )}
+        </p>
         <hr className="mt-4" />
         {Markdoc.renderers.react(mdContent, React, { components })}
       </div>
