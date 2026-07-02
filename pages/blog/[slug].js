@@ -7,9 +7,11 @@ import config, { components } from "../../markdoc.config";
 import SEO from "../../components/SEO";
 import { excerpt, toISODate, readingTimeMinutes } from "../../utils/posts";
 import { blogPostingJsonLd } from "../../utils/structuredData";
+import { getRelatedAndAdjacent } from "../../utils/blog";
+import Link from "next/link";
 
 const Blog = (props) => {
-  const { frontMatter, slug, content } = props;
+  const { frontMatter, slug, content, related } = props;
 
   const ast = Markdoc.parse(content);
   const mdContent = Markdoc.transform(ast, config);
@@ -51,6 +53,34 @@ const Blog = (props) => {
         <hr className="mt-4" />
         {Markdoc.renderers.react(mdContent, React, { components })}
       </div>
+
+      {related.length > 0 && (
+        <div className="w-full max-w-3xl mx-auto mt-16 border-t border-gray-200 dark:border-gray-700 pt-8">
+          <h2 className="text-xl font-bold tracking-tight text-black dark:text-white mb-4">
+            Other blogs you might like
+          </h2>
+          <ul className="space-y-2">
+            {related.map((post) => (
+              <li
+                key={post.slug}
+                className="flex items-baseline justify-between gap-4"
+              >
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  {post.title}
+                </Link>
+                {post.date && (
+                  <span className="flex-shrink-0 text-xs text-gray-500 dark:text-gray-400">
+                    {post.date}
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </>
   );
 };
@@ -80,8 +110,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   const { data: frontMatter, content } = matter(markdownWithMeta);
 
-  // const ast = Markdoc.parse(content);
-  // const mdContent = Markdoc.transform(ast /* config */);
+  const { related } = getRelatedAndAdjacent(slug);
 
-  return { props: { frontMatter, slug, content } };
+  return { props: { frontMatter, slug, content, related } };
 };

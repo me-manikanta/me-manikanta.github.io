@@ -63,3 +63,60 @@ export function getPostsByTag(tagSlug: string): Post[] {
     (post.frontMatter.tags ?? []).some((t) => slugifyTag(t) === tagSlug)
   );
 }
+
+/** A lightweight post reference for related/adjacent navigation. */
+export type PostLink = {
+  slug: string;
+  title: string;
+  date: string | null;
+};
+
+function toPostLink(post: Post): PostLink {
+  return {
+    slug: post.slug,
+    title: post.frontMatter.title,
+    date: post.frontMatter.date ?? null,
+  };
+}
+
+/**
+ * For a given post slug, compute up to `limit` related posts plus the
+ * chronologically previous/next posts. Related posts are ranked by shared-tag
+ * count, then recency; when there aren't enough tag matches, the most recent
+ * other posts fill the remaining slots. Posts are date-sorted (newest first),
+ * so "prev" is the older neighbour and "next" is the newer one.
+ */
+export function getRelatedAndAdjacent(
+  slug: string,
+  limit = 3
+): { related: PostLink[]; prev: PostLink | null; next: PostLink | null } {
+  const posts = getAllPosts();
+  const index = posts.findIndex((p) => p.slug === slug);
+  if (index === -1) return { related: [], prev: null, next: null };
+
+  const current = posts[index];
+  const currentTags = new Set(
+    (current.frontMatter.tags ?? []).map((t) => slugifyTag(t))
+  );
+
+  const newer = index > 0 ? posts[index - 1] : null; // sorted newest-first
+  const older = index < posts.length - 1 ? posts[index + 1] : null;
+
+  const others = posts.filter((p) => p.slug !== slug);
+  const scored = others
+    .map((post, i) => {
+      const shared = (post.frontMatter.tags ?? []).filter((t) =>
+        currentTags.has(slugifyTag(t))
+      ).length;
+      return { post, shared, order: i };
+    })
+    .sort((a, b) => b.shared - a.shared || a.order - b.order);
+
+  const related = scored.slice(0, limit).map(({ post }) => toPostLink(post));
+
+  return {
+    related,
+    prev: older ? toPostLink(older) : null,
+    next: newer ? toPostLink(newer) : null,
+  };
+}
