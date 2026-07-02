@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://me-manikanta.github.io</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
     <loc>https://me-manikanta.github.io/about</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
     <loc>https://me-manikanta.github.io/blog</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
     <loc>https://me-manikanta.github.io/snippets</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-02</lastmod>
   </url>
   <url>
     <loc>https://me-manikanta.github.io/blog/commit-messages</loc>
@@ -44,5 +44,41 @@
   </url>
   <url>
     <loc>https://me-manikanta.github.io/snippets/grep-search</loc>
+  </url>
+  <url>
+    <loc>https://me-manikanta.github.io/blog/tag/git</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://me-manikanta.github.io/blog/tag/development</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://me-manikanta.github.io/blog/tag/best-practices</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://me-manikanta.github.io/blog/tag/debugging</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://me-manikanta.github.io/blog/tag/python</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://me-manikanta.github.io/blog/tag/tutorial</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://me-manikanta.github.io/blog/tag/side-project-sunday</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://me-manikanta.github.io/blog/tag/automation</loc>
+    <lastmod>2026-07-02</lastmod>
+  </url>
+  <url>
+    <loc>https://me-manikanta.github.io/blog/tag/finance</loc>
+    <lastmod>2026-07-02</lastmod>
   </url>
 </urlset>
